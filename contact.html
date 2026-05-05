@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | My College Diary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Times New Roman", Times, serif; }
+
+        body {
+            background-color: maroon; 
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            padding: 20px 5%; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid white;
+            flex-wrap: wrap; /* Fix for mobile overlapping */
+            gap: 15px;
+        }
+
+        header h1 a {
+            text-decoration: none;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #ffb6c1; text-decoration: underline; }
+
+        /* --- CONTACT SECTION --- */
+        section {
+            flex: 1;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .contact-card {
+            background-color: maroon; 
+            border: 4px solid white;
+            border-radius: 15px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            /* Neubrutalist shadow */
+            box-shadow: 12px 12px 0px black;
+            border: 3px solid white;
+        }
+
+        .contact-card h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            border-bottom: 4px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* --- CONTACT LINKS --- */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s ease-in-out;
+            border: 2px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px); /* Slides right on hover */
+            background: rgba(255, 255, 255, 0.25);
+            border: 2px solid white;
+        }
+
+        .contact-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            object-fit: cover;
+            border-radius: 8px; /* Clean look for square icons */
+            background: white; /* Optional: adds a background behind transparent logos */
+            padding: 2px;
+        }
+
+        .contact-text {
+            text-align: left;
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .contact-text p {
+            font-size: 14px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 4px solid white;
+            font-weight: bold;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            header { justify-content: center; }
+            nav { width: 100%; justify-content: center; }
+            .contact-card { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><a href="index.html">My Diary</a></h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="diary.html">Diary</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <div class="contact-card">
+        <h2>Get in Touch</h2>
+        
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/18kK9XC9TG/?mibextid=wwXIfr" class="contact-item" target="_blank">
+            <img src="facebook.avif" alt="Facebook">
+            <div class="contact-text">
+                <strong>Facebook</strong>
+                <p>mjcaguindagan</p>
+            </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/mjcaguindagan/" class="contact-item" target="_blank">
+            <img src="instagram.webp" alt="Instagram">
+            <div class="contact-text">
+                <strong>Instagram</strong>
+                <p>@mjcaguindagan</p>
+            </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:your-email@gmail.com" class="contact-item">
+            <img src="gmail.avif" alt="Email">
+            <div class="contact-text">
+                <strong>Email</strong>
+                <p>Send a message</p>
+            </div>
+        </a>
+
+        <!-- Phone (Made clickable for mobile) -->
+        <a href="tel:0961034594" class="contact-item">
+            <img src="call logo.png" alt="Phone">
+            <div class="contact-text">
+                <strong>Phone</strong>
+                <p>0961034594</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 My College Diary ❤️</p>
+</footer>
+
+</body>
+</html>

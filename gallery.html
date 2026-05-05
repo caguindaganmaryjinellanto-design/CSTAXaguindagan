@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | My College Diary</title>
+    <style>
+        * {
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: "Times New Roman", Times, serif; 
+        }
+        
+        body { 
+            background-color: maroon; 
+            color: white; 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header { 
+            padding: 20px 60px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 4px solid white; 
+        }
+        
+        header h1 a {
+            text-decoration: none;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-size: 20px; 
+            font-weight: bold; 
+        }
+        
+        nav a:hover { 
+            text-decoration: underline; 
+            color: #ffb6c1; 
+            transition: 0.3s; 
+        }
+
+        .container { 
+            flex: 1;
+            padding: 50px 10%; 
+            text-align: center; 
+        }
+        
+        .year-heading { 
+            font-size: 45px; 
+            margin: 40px 0 20px 0;
+            padding: 10px;
+            border-bottom: 8px solid white; 
+            display: inline-block; 
+        }
+
+        .section-divider {
+            font-size: 28px;
+            margin: 50px 0 30px;
+            text-align: left;
+            border-left: 5px solid white;
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; 
+            margin-bottom: 60px;
+        }
+
+        .gallery-item { 
+            background: white; 
+            border: 4px solid white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 12px 12px 0px black; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 18px 18px 0px black; 
+        }
+        
+        .gallery-item img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-bottom: 3px solid maroon; 
+            display: block; 
+        }
+        
+        .caption { 
+            padding: 20px; 
+            color: black; 
+            background-color: #fff;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .caption h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: maroon;
+        }
+
+        .caption p {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        /* --- MODAL STYLES (ZOOM EFFECT) --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.9); 
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content-container {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.7); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .modal-content {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #modal-caption {
+            color: white;
+            background: maroon;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        #modal-caption h3 {
+            margin-bottom: 10px;
+            color: #ffb6c1;
+        }
+
+        .close-modal {
+            position: fixed;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        footer { 
+            padding: 20px; 
+            border-top: 4px solid white; 
+            text-align: center; 
+            font-weight: bold; 
+            background-color: maroon;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="webpage.html">My Diary</a></h1>
+        <nav>
+            <a href="index.html">Home</a> 
+            <a href="about.html">About</a>
+            <a href="diary.html">Diary</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="year-heading">College Memories</h2>
+
+        <h3 class="section-divider">Sports & Victories 🏆</h3>
+        <div class="grid">
+            <div class="gallery-item">
+                <img src="annoucement of bsit as overall champion of sportsfev on the csta 2026.jpg" alt="Champion Announcement">
+                <div class="caption">
+                    <h3>Overall Champions!</h3>
+                    <p>The moment our department was announced as the Overall Champion of Sportsfest 2026!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="overall champion.jpg" alt="BSIT Team">
+                <div class="caption">
+                    <h3>Blue Wizards Pride</h3>
+                    <p>Celebrating our victory as the Blue Wizards during the 2026 CSTA Sportsfest.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="dean harold hold tronpy of overall champion.jpg" alt="Dean Harold">
+                <div class="caption">
+                    <h3>Winning with Dean Harold</h3>
+                    <p>Dean Harold Lucero joined us in lifting the championship trophy.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="champion bsit vs hm volleyball men.jpg" alt="Volleyball Men">
+                <div class="caption">
+                    <h3>Volleyball Men's Finals</h3>
+                    <p>Victory in the intense volleyball match against HM.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="champion hm vs bsit volleyball men.jpg" alt="Volleyball Action">
+                <div class="caption">
+                    <h3>Championship Action</h3>
+                    <p>Highlights from our winning streak on the volleyball court.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="sportsfest.png" alt="Sportsfest Event">
+                <div class="caption">
+                    <h3>Sportsfest Highlights</h3>
+                    <p>A look back at the energy and team spirit of the games.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="last day of sporsfest.png" alt="Closing Event">
+                <div class="caption">
+                    <h3>Sportsfest Finale</h3>
+                    <p>Closing out the 2025 Sportsfest with a bang.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="fun run.png" alt="Fun Run">
+                <div class="caption">
+                    <h3>Campus Fun Run</h3>
+                    <p>Kicking off events with the annual fun run!</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-divider">Academic Life & Events 💻</h3>
+        <div class="grid">
+            <div class="gallery-item">
+                <img src="itweek.png" alt="IT Week">
+                <div class="caption">
+                    <h3>IT Week Projects</h3>
+                    <p>Collaborating with the team during our department's big week.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="awards day.jpg" alt="Awards">
+                <div class="caption">
+                    <h3>Awards Day</h3>
+                    <p>Hard work pays off—celebrating our achievements and recognition.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Mr & Ms CSTA.png" alt="Pageant Night">
+                <div class="caption">
+                    <h3>Mr. & Ms. CSTA</h3>
+                    <p>A night of glamour and school pride at the pageant.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="online cpro.png" alt="Online Class">
+                <div class="caption">
+                    <h3>Programming Sessions</h3>
+                    <p>Focusing on computer programming during our online classes.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="flim make.jpg" alt="Film Project">
+                <div class="caption">
+                    <h3>Film Making</h3>
+                    <p>Behind the scenes of our creative film projects.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="enrollement day.png" alt="Enrollment">
+                <div class="caption">
+                    <h3>Enrollment Day</h3>
+                    <p>Officially signed up for the second semester!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="it week pic with friends.jpg" alt="IT Friends">
+                <div class="caption">
+                    <h3>IT Squad</h3>
+                    <p>Great times at the Snap It booth with the friends.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="it week pic with friends 0.2.jpg" alt="Break Time">
+                <div class="caption">
+                    <h3>Taking a Break</h3>
+                    <p>Recharging with the group between school events.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="it week pic with friends 0.3.jpg" alt="Memories">
+                <div class="caption">
+                    <h3>Event Snapshots</h3>
+                    <p>Capturing every small moment during the busy term.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="it week pic with friends 0.4.jpg" alt="Group Shot">
+                <div class="caption">
+                    <h3>The Best Crew</h3>
+                    <p>Making everyday school life more fun together.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-divider">Food & Celebrations ❤️</h3>
+        <div class="grid">
+            <div class="gallery-item">
+                <img src="year end party as 2nd year student.jpg" alt="Party 1">
+                <div class="caption">
+                    <h3>Year-End Party</h3>
+                    <p>Celebrating the end of a successful 2nd year!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="samgyeopsal.jpg" alt="Samgyup">
+                <div class="caption">
+                    <h3>Unlimited Grilling</h3>
+                    <p>The ultimate reward: a samgyeopsal feast with the squad.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="foodie with friends in 99 ramen.jpg" alt="Ramen 1">
+                <div class="caption">
+                    <h3>Ramen Night</h3>
+                    <p>Trying out the best flavors at 99 Ramen.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ramewn again.jpg" alt="Ramen 2">
+                <div class="caption">
+                    <h3>Ramen Round Two</h3>
+                    <p>Because you can never have too much ramen after class!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="fairview terecas.jpg" alt="Hangout">
+                <div class="caption">
+                    <h3>Fairview Hangouts</h3>
+                    <p>Spending time at Fairview Terraces after a busy week.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="boding with friends.png" alt="Bonding">
+                <div class="caption">
+                    <h3>Best Friend Bonding</h3>
+                    <p>Cherishing the times spent together outside of class.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="outside school.jpg" alt="Casual">
+                <div class="caption">
+                    <h3>After-Class Vibes</h3>
+                    <p>Casual moments outside the campus before heading home.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content-container">
+            <img id="modalImg" class="modal-content" src="" alt="Zoomed Image">
+            <div id="modal-caption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 My College Diary ❤️</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const captionText = document.getElementById("modal-caption");
+        const closeModal = document.querySelector(".close-modal");
+
+        document.querySelectorAll(".gallery-item").forEach(item => {
+            item.addEventListener("click", function() {
+                modal.style.display = "flex";
+                const imgSrc = this.querySelector("img").src;
+                const title = this.querySelector("h3").innerText;
+                const description = this.querySelector("p").innerText;
+                
+                modalImg.src = imgSrc;
+                captionText.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+            });
+        });
+
+        closeModal.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) {
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+    </script>
+</body>
+</html>
