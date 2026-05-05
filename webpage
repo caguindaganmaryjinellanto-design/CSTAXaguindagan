@@ -108,34 +108,3 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <h1><a href="webpage.html">My Diary</a></h1>
-        <nav>
-            <a href="index.html">Home</a> 
-            <a href="about.html">About</a>
-            <a href="diary.html">Diary</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-           
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h3>Hello! I'm</h3>
-            <h2>𝓒𝓪𝓰𝓾𝓲𝓷𝓭𝓪𝓰𝓪𝓷.<br>,𝓜𝓪𝓻𝔂 𝓙𝓲𝓷𝓮 𝓛❤️</h2>
-            <p>IT Student at CSTA.</p>
-        </div>
-
-        <div class="hero-image">
-            <img src="maryjine.png" alt="Mary Jine">
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; <a href="CSTA Campus Entrance.html"> 2026 My College Diary ❤️</a></p>
-    </footer>
-
-</body>
-</html>
