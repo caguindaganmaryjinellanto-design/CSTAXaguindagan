@@ -63,7 +63,7 @@
             text-decoration: underline;
         }
 
-        /* LAPTOP STYLE: Increased max-width for a bigger image */
+        /* LAPTOP STYLE: Same size as before */
         .hero {
             flex: 1;
             display: flex;
@@ -97,7 +97,7 @@
         }
 
         .hero-image {
-            max-width: 800px; /* Increased from 500px for a bigger laptop image */
+            max-width: 800px; /* LAPTOP: Same size - 800px max */
             width: 100%;
             display: flex;
             justify-content: center;
@@ -119,12 +119,12 @@
             color: white;
         }
 
-        /* PHONE STYLE: Optimized for "Big Picture" */
+        /* PHONE STYLE: BIG PICTURE - Takes FULL screen width! */
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding: 20px 10px; 
+                padding: 20px 5px; 
                 gap: 20px;
             }
 
@@ -135,17 +135,18 @@
 
             .hero-image {
                 order: 2;
-                max-width: 100%; /* FIXED: Removed the 50% limit */
-                width: 100%; /* FIXED: Corrected from 500% */
+                max-width: 100%; 
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 margin-top: 10px;
             }
 
             .hero-image img {
-                width: 95%; /* Picture fills most of the phone width */
-                max-width: none; 
+                width: 100% !important; /* BIG PICTURE: Full phone width */
+                max-width: 100%; 
                 height: auto;
+                max-height: 70vh; /* Prevents it from being too tall */
             }
         }
     </style>
@@ -180,3 +181,4 @@
 
 </body>
 </html>
+
