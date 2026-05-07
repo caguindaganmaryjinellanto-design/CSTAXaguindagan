@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-        } /* FIXED: Added missing closing brace */
+        }
 
         header {
             background-color: maroon;
@@ -63,6 +63,7 @@
             text-decoration: underline;
         }
 
+        /* LAPTOP STYLE: Unchanged */
         .hero {
             flex: 1;
             display: flex;
@@ -118,25 +119,33 @@
             color: white;
         }
 
-        /* Responsive Fix for Mobile (Phone) */
+        /* PHONE STYLE: Optimized for "Big Picture" */
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 20px;
+                padding: 20px 10px; /* Reduced padding to give image more room */
+                gap: 20px;
             }
 
             .hero-text {
                 order: 1;
+                width: 100%;
             }
 
             .hero-image {
                 order: 2;
-                max-width: 100%; /* Allows picture to be BIG */
+                max-width: 100%; /* Removes the 500px laptop limit */
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
             }
 
             .hero-image img {
-                width: 85%; /* Big picture on phone */
+                width: 100%; /* Picture fills the full width of the phone */
+                max-width: none; /* Removes any maximum size restrictions */
+                height: auto;
             }
         }
     </style>
@@ -157,7 +166,7 @@
     <section class="hero">
         <div class="hero-text">
             <h3>Hello! I'm</h3>
-            <h2>𝓒𝓪𝓰𝓾𝓲𝓷𝓭𝓪𝓰𝓪𝓷.<br>,𝓜𝓪𝓻𝔂 𝓙𝓲𝓷𝓮 𝓛❤️</h2>
+            <h2>𝓒𝓪𝓰𝓾𝓲𝓷𝓭𝓪𝓰𝓪𝓷.<br>, 𝓜𝓪𝓻𝔂 𝓙𝓲𝓷𝓮 𝓛❤️</h2>
             <p>IT Student at CSTA.</p>
         </div>
         <div class="hero-image">
