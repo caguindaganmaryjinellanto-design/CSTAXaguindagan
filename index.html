@@ -63,7 +63,7 @@
             text-decoration: underline;
         }
 
-        /* LAPTOP STYLE: Unchanged */
+        /* LAPTOP STYLE: Increased max-width for a bigger image */
         .hero {
             flex: 1;
             display: flex;
@@ -97,7 +97,7 @@
         }
 
         .hero-image {
-            max-width: 500px;
+            max-width: 800px; /* Increased from 500px for a bigger laptop image */
             width: 100%;
             display: flex;
             justify-content: center;
@@ -124,7 +124,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding: 20px 10px; /* Reduced padding to give image more room */
+                padding: 20px 10px; 
                 gap: 20px;
             }
 
@@ -135,16 +135,16 @@
 
             .hero-image {
                 order: 2;
-                max-width: 50%; /* Removes the 500px laptop limit */
-                width: 500%;
+                max-width: 100%; /* FIXED: Removed the 50% limit */
+                width: 100%; /* FIXED: Corrected from 500% */
                 display: flex;
                 justify-content: center;
                 margin-top: 10px;
             }
 
             .hero-image img {
-                width: 100%; /* Picture fills the full width of the phone */
-                max-width: none; /* Removes any maximum size restrictions */
+                width: 95%; /* Picture fills most of the phone width */
+                max-width: none; 
                 height: auto;
             }
         }
