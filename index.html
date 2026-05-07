@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-        } /* FIXED: Added missing closing brace here */
+        } /* CLOSED BRACE FIXED */
 
         header {
             background-color: maroon;
@@ -33,6 +33,7 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 4px solid white;
+            flex-wrap: wrap;
         }
 
         header h1 a {
@@ -56,7 +57,7 @@
             display: flex;
             align-items: center; 
             justify-content: space-around;
-            padding: 0 10%;
+            padding: 40px 10%;
         }
 
         .hero-text h2 { 
@@ -68,9 +69,10 @@
         }
 
         .hero-image {
-            height: 50vh; /* Exactly half of the laptop screen height */
+            height: 50vh; /* Exactly half of the screen height on laptop */
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .hero-image img {
@@ -85,19 +87,27 @@
                 flex-direction: column;
                 text-align: center;
                 padding: 40px 10px;
+                justify-content: center;
+            }
+
+            .hero-text {
+                margin-bottom: 30px;
+            }
+
+            .hero-text h2 {
+                font-size: 45px;
             }
 
             .hero-image {
-                height: auto; 
+                height: auto; /* Reset height for mobile */
                 width: 100%;
                 display: flex;
                 justify-content: center;
-                margin-top: 20px;
             }
 
             .hero-image img {
                 width: 50%; /* Exactly half of the phone screen width */
-                height: auto;
+                height: auto; /* Keeps photo from stretching */
             }
         }
 
@@ -107,6 +117,7 @@
             text-align: center;
             background: maroon; 
             color: white;
+            margin-top: auto; /* Keeps footer at the bottom */
         }
     </style>
 </head>
