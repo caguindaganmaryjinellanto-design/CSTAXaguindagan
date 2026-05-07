@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-        } /* CLOSED BRACE FIXED */
+        } /* FIXED: Closing brace added here */
 
         header {
             background-color: maroon;
@@ -33,7 +33,6 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 4px solid white;
-            flex-wrap: wrap;
         }
 
         header h1 a {
@@ -51,13 +50,13 @@
             font-weight: bold;
         }
 
-        /* --- HALF SCREEN LAPTOP --- */
+        /* --- HALF SCREEN ON LAPTOP --- */
         .hero {
             flex: 1;
             display: flex;
             align-items: center; 
             justify-content: space-around;
-            padding: 40px 10%;
+            padding: 0 10%;
         }
 
         .hero-text h2 { 
@@ -69,10 +68,9 @@
         }
 
         .hero-image {
-            height: 50vh; /* Exactly half of the screen height on laptop */
+            height: 50vh; /* Half of the screen height for laptop */
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .hero-image img {
@@ -81,17 +79,17 @@
             filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.6)); 
         }
 
-        /* --- HALF SCREEN PHONE --- */
+        /* --- FULL SCREEN ON PHONE --- */
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 10px;
-                justify-content: center;
+                padding: 40px 0 0 0; /* No side padding to let image go full width */
+                justify-content: flex-start;
             }
 
             .hero-text {
-                margin-bottom: 30px;
+                padding: 0 20px 30px 20px;
             }
 
             .hero-text h2 {
@@ -99,15 +97,17 @@
             }
 
             .hero-image {
-                height: auto; /* Reset height for mobile */
-                width: 100%;
+                height: auto; 
+                width: 100%; /* Container takes full screen width */
                 display: flex;
                 justify-content: center;
+                margin-top: auto;
             }
 
             .hero-image img {
-                width: 50%; /* Exactly half of the phone screen width */
-                height: auto; /* Keeps photo from stretching */
+                width: 100%; /* Photo fills the entire phone width */
+                height: auto;
+                max-width: none;
             }
         }
 
@@ -117,7 +117,7 @@
             text-align: center;
             background: maroon; 
             color: white;
-            margin-top: auto; /* Keeps footer at the bottom */
+            z-index: 10;
         }
     </style>
 </head>
