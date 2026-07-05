@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | My College Diary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        body {
+            /* Smooth background overlay using your signature styling logic */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('about.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Centered Welcome Container */
+        .welcome-container {
+            padding: 50px 40px;
+            border: 3px solid maroon;
+            background-color: rgba(0, 0, 0, 0.85);
+            box-shadow: 8px 8px 0px black;
+            max-width: 550px;
+            width: 90%;
+            border-radius: 4px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: white;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-bottom: 4px solid maroon;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        /* Interactive Entrance Button */
+        .enter-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: maroon;
+            padding: 16px 45px;
+            font-size: 22px;
+            font-weight: bold;
+            border: 3px solid white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 0px black;
+            cursor: pointer;
+        }
+
+        /* Button Hover Effects */
+        .enter-btn:hover {
+            background-color: white;
+            color: black;
+            border-color: maroon;
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px maroon;
+        }
+
+        /* Simple structural fade-in entry animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 32px; }
+            p { font-size: 15px; }
+            .enter-btn { font-size: 18px; padding: 12px 30px; }
+            .welcome-container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-container">
+        <h1>WELCOME</h1>
+        <p>To Mary Jine's College Diary Portfolio Website</p>
+        
+        <a href="index.html" class="enter-btn">ENTER SITE</a>
+    </div>
+
+</body>
+</html>
