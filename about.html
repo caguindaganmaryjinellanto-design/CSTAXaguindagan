@@ -13,8 +13,7 @@
             font-family: "Times New Roman", Times, serif;
         }
 
-         body {
-            /* Using your background image logic */
+        body {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('about.jpg');
             background-position: center;
             background-size: cover;
@@ -24,35 +23,30 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden; /* Prevents horizontal scrolling */
+            overflow-x: hidden;
         }
 
         header {
-            /* Changed to Maroon */
             background-color: maroon;
+            padding: 20px 40px;
             display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allows menu to wrap if it's too long */
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-nav a {
-    margin: 5px;
-    font-size: clamp(14px, 4vw, 20px); /* Scales font based on screen width */
-}
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
         header h1 a {
             text-decoration: none;
             color: white;
             font-size: 32px;
             font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         nav a {
@@ -79,8 +73,18 @@ nav a {
             padding: 50px 20px;
         }
 
+        .about-content {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .about-content p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
         section h2 {
-            font-size: 60px;
+            font-size: 50px;
             color: white; 
             margin-bottom: 35px;
             border-bottom: 8px solid white; 
@@ -88,41 +92,62 @@ nav a {
             text-transform: uppercase;
         }
 
-        /* Replace the .info-grid style in about.html */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Laptop: multi-column, Phone: 1 column */
-    gap: 20px;
-    max-width: 1100px;
-    width: 100%;
-    padding: 10px;
-}
+        .section-divider {
+            font-size: 40px;
+            margin: 40px 0 25px 0;
+            text-transform: uppercase;
+            border-bottom: 4px solid maroon;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Info Grid Layout for Skills */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            width: 100%;
+            padding: 10px;
+        }
+
         .info-card {
             background-color: white;
             color: black;
             border: 3px solid black;
             padding: 25px;
-            font-size: 18px;
-            font-weight: bold;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 90px;
+            min-height: 150px;
             transition: 0.3s;
-            box-shadow: 5px 5px 0px black; 
+            box-shadow: 5px 5px 0px maroon; /* Pop of signature Maroon */
         }
 
         .info-card:hover {
             transform: translateY(-5px);
             background-color: #f0f0f0; 
+            box-shadow: 5px 5px 0px black;
+        }
+
+        .info-card h4 {
+            font-size: 22px;
+            color: maroon;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 1.4;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            /* Changed to Maroon */
             background-color: maroon;
-            /* White border to separate it from the maroon body */
             border-top: 4px solid white; 
             font-weight: bold;
             color: white;
@@ -130,16 +155,18 @@ nav a {
 
         @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
-            section h2 { font-size: 40px; }
+            section h2 { font-size: 35px; }
+            .section-divider { font-size: 30px; }
             header { padding: 20px; flex-direction: column; gap: 10px; }
+            nav a { margin: 5px; font-size: 18px; }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-        <h1>ABOUT ME</h1>
+    <header>
+        <h1><a href="index.html">ABOUT ME</a></h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -149,29 +176,46 @@ nav a {
         </nav>
     </header>
 
-<section>
-<div class="about-content">
-     <h2>It's nice having you here❤️!</h2>
-    <p>
-I am <strong>Mary Jine Llanto Caguindagan</strong>,and I am 23 years old. I am a strong, independent woman,
- loves discovering new things every single day.<br><br>Listening to old songs and OPM is my ultimate happy pill,
-and I find deep peace in nature and looking at the blue sea.<br><br>
-Currently,<strong> I am a second-year student at CSTA taking up a Bachelor of Science in Information Technology</strong>.
-        I am actively learning how to code and think creatively, challenging myself to build new things in my favorite bold colors of Maroon, Black, and Gray!
-<br><br>I am also the youngest member of my family. When I want to unwind and relax, you will usually find me playing mobile games,
-    reading my favorite Manhwa and Manga.
-</p>
-<div class="skill-content">
-   <h3 class="section-divider">SKILL</h3>
-        <div class="grid">
-            <div class="gallery-item">
-                <img src="annoucement of bsit as overall champion of sportsfev on the csta 2026.jpg" alt="Champion Announcement">
-                <div class="caption">
-                    <h3>MICROSOFT</h3>
-                    <p>Microsoft is a massive multinational technology company used to power computers, manage businesses, and provide entertainment</p>
-                </div>
+    <section>
+        <div class="about-content">
+            <h2>It's nice having you here❤️!</h2>
+            <p>
+                I am <strong>Mary Jine Llanto Caguindagan</strong>, and I am 23 years old. I am a strong, independent woman who loves discovering new things every single day.<br><br>
+                Listening to old songs and OPM is my ultimate happy pill, and I find deep peace in nature and looking at the blue sea.<br><br>
+                Currently, <strong>I am a second-year student at CSTA taking up a Bachelor of Science in Information Technology</strong>.
+                I am actively learning how to code and think creatively, challenging myself to build new things in my favorite bold colors of Maroon, Black, and Gray!<br><br>
+                I am also the youngest member of my family. When I want to unwind and relax, you will usually find me playing mobile games or reading my favorite Manhwa and Manga.
+            </p>
+        </div>
 
-</div>
+        <h3 class="section-divider">MY SKILLS</h3>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>HTML5</h4>
+                <p>Structuring clean, semantic web layouts and building the core foundation of modern web applications.</p>
+            </div>
+            
+            <div class="info-card">
+                <h4>CSS3</h4>
+                <p>Styling responsive interfaces with custom color palettes, grids, and smooth hover animations.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>JavaScript</h4>
+                <p>Adding dynamic interactivity and logic to bring web designs to life on the client side.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>C++</h4>
+                <p>Developing structural logic, mastering OOP principles, and strengthening problem-solving skills.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Microsoft Office</h4>
+                <p>Managing documentation, data reports, and professional presentations efficiently.</p>
+            </div>
+        </div>
     </section>
 
 <footer>
